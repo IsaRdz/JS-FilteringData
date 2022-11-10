@@ -49,12 +49,13 @@ var arrayNumbers = numbers.split(",");
 console.log(arrayNumbers);
 var arrayFloats = []
 for(let i=0; i < arrayNumbers.length; i++){
-    arrayFloats.push(parseFloat(arrayNumbers[i]))
+    arrayFloats.push(parseFloat(arrayNumbers[i]).toFixed(2))
 }
-console.log(arrayFloats) 
-
-console.log(`El valor maximo es: ${Math.max(arrayFloats)}`);
-console.log(Math.min(arrayFloats));
+console.log("arrayFloats", arrayFloats) 
+console.log(`El valor máximo es: ${Math.max(...arrayFloats)}`);
+console.log(`El valor mínimo es: ${Math.min(...arrayFloats)}`);
+console.log(`Orden ascendente [${arrayFloats.sort()}]`);
+console.log(`Orden descendente: [${arrayFloats.reverse()}]` );
 
 //METODOS DE NUMBERS
 
@@ -138,3 +139,14 @@ console.log(date.getSeconds());
 date = new Date('07, 20, 69 00:20:18:20');
 console.log(date.getTime());
 
+//JS7 APLICANDO LOGICA II
+
+const array =  ["Hola", 57, "chau", 875, "luna", "sol", 647.1, "estrella", 0, "planeta"];
+
+//MAP
+
+//FOREACH
+
+//FILTER
+
+//SORT
