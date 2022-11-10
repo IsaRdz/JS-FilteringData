@@ -40,6 +40,22 @@ console.log(cadena.startsWith("Este"));
 cadena = "  Todos los métodos pueden ser combinados entre sí para obtener el resultado esperado  "
 console.log(cadena.trim().toLocaleUpperCase().split(" "));
 
+//Ejercicio JS8
+var cadena = "       eStoy en El moduLo tres DEL curso de JavAscrip     "
+console.log(cadena.trim().toLocaleLowerCase().replace("estoy","Estoy").replace("modulo","módulo").replace("tres",3).replace("javascrip", "JavaScript"));
+
+var numbers = "3,8,9,8.65,3.6965378,9"
+var arrayNumbers = numbers.split(",");
+console.log(arrayNumbers);
+var arrayFloats = []
+for(let i=0; i < arrayNumbers.length; i++){
+    arrayFloats.push(parseFloat(arrayNumbers[i]))
+}
+console.log(arrayFloats) 
+
+console.log(`El valor maximo es: ${Math.max(arrayFloats)}`);
+console.log(Math.min(arrayFloats));
+
 //METODOS DE NUMBERS
 
 //.parseInt("string") - convierte a entero sin decimales
@@ -121,3 +137,4 @@ console.log(date.getSeconds());
 //.getTime()
 date = new Date('07, 20, 69 00:20:18:20');
 console.log(date.getTime());
+
