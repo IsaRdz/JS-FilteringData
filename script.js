@@ -1,5 +1,5 @@
 //METODOS STRINGS
-
+/*
 //.toUpperCase()
 var cadena = "El método toUpperCase convierte todos los caracteres de la cadena en mayúsculas"
 console.log(cadena.toLocaleUpperCase());
@@ -137,15 +137,38 @@ console.log(date.getSeconds());
 
 //.getTime()
 date = new Date('07, 20, 69 00:20:18:20');
-console.log(date.getTime());
+console.log(date.getTime());*/
 
 //JS7 APLICANDO LOGICA II
 
 const array =  ["Hola", 57, "chau", 875, "luna", "sol", 647.1, "estrella", 0, "planeta"];
+const btnMap = document.getElementById("btn-map");
+const btnForeach = document.getElementById("btn-foreach");
+const btnFilter = document.getElementById("btn-filter");
+const btnSort = document.getElementById("btn-sort");
+const result = document.getElementById("result");
 
 //MAP
+btnMap.addEventListener("click", (event) =>{
+    const stringsArray = array.map(function(element){
+        return element.toString().toLocaleUpperCase();
+    })
+    console.log(stringsArray)
+    result.innerHTML = stringsArray;
+})
 
 //FOREACH
+btnForeach.addEventListener("click", (event) => {
+    const arrayFor = array.forEach(function(element){
+        if(isNaN(element)){
+            console.log(element)
+        }else{
+            array.shift(element);
+        }
+    });
+    console.log(arrayFor);
+    result.innerHTML = arrayFor
+})
 
 //FILTER
 
