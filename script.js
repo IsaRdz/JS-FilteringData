@@ -141,7 +141,7 @@ console.log(date.getTime());*/
 
 //JS7 APLICANDO LOGICA II
 
-const array =  ["Hola", 57, "chau", 875, "luna", "sol", 647.1, "estrella", 0, "planeta"];
+const array =  [541, 57, 5484, 875.2547, 21102, 14.54, 647.1, 1215.01, 0, 1470];
 const btnMap = document.getElementById("btn-map");
 const btnForeach = document.getElementById("btn-foreach");
 const btnFilter = document.getElementById("btn-filter");
@@ -151,7 +151,7 @@ const result = document.getElementById("result");
 //MAP
 btnMap.addEventListener("click", (event) =>{
     const stringsArray = array.map(function(element){
-        return element.toString().toLocaleUpperCase();
+        return `</br> ${element.toFixed(1)}`;
     })
     console.log(stringsArray)
     result.innerHTML = stringsArray;
@@ -159,17 +159,26 @@ btnMap.addEventListener("click", (event) =>{
 
 //FOREACH
 btnForeach.addEventListener("click", (event) => {
-    const arrayFor = array.forEach(function(element){
-        if(isNaN(element)){
-            console.log(element)
-        }else{
-            array.shift(element);
-        }
-    });
-    console.log(arrayFor);
+    var arrayFor = []
+    array.forEach(function(element, index, array){
+        console.log(`Element[${index}]: ${Math.ceil(element)}`)
+        arrayFor.push(`</br> Element[${index}]: ${Math.ceil(element)}`)
+    });    
     result.innerHTML = arrayFor
 })
 
 //FILTER
+btnFilter.addEventListener("click", () =>{
+    const arrayFilter = array.filter(entero => entero > 500);
+    console.log(arrayFilter);
+    result.innerHTML = arrayFilter;
+})
 
 //SORT
+btnSort.addEventListener("click", () =>{
+    array.sort(function(a, b){
+        return a -b;
+    });
+    console.log(array);
+    result.innerHTML = array;
+});
